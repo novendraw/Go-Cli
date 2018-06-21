@@ -1,5 +1,6 @@
-puts "Welcome"
+puts "Welcome To The Go-cli App"
 unit_cost = 300
+history = Array[]
 
 peta1 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta2 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -22,6 +23,10 @@ peta18 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta19 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta20 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
+
+
+
+
 puts "You Have 3 Choices of Action :"
 puts "1. Show Map"
 puts "2. Order Go-Ride"
@@ -31,8 +36,11 @@ puts "Please write number of your choice and press enter :"
 pilihan = gets.chomp.to_i
 
 if pilihan == 1
+	puts "	Show Map"
 	puts ""
-	puts "Show Map"
+	puts "	Information :"
+	puts "	U = User"
+	puts "	D = Driver"
 	puts ""
 	print peta1
 	puts ""
@@ -77,7 +85,13 @@ if pilihan == 1
 elsif pilihan == 2
 	puts "2"
 elsif pilihan == 3
-	puts "3"
+	if history = []
+	else
+		puts "	View History"
+		puts "	Information : [start_place,destination,distance,cost]"
+		puts ""
+		puts history
+	end
 else
 	puts "error"
 end
