@@ -10,6 +10,7 @@ pilihan = 0
 runtime = 0
 
 until pilihan == 4
+
 puts "Welcome To The Go-cli App"
 
 peta1 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -33,9 +34,8 @@ peta18 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta19 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta20 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-if runtime == 1 then
+if runtime == 1
 until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (driver1 != driver4) && (driver2 != driver4) && (driver3 != driver4) && (driver1 != driver5) && (driver2 != driver5) && (driver3 != driver5) && (driver4 != driver5) && (driver1 != pengguna) && (driver2 != pengguna) && (driver3 != pengguna) && (driver4 != pengguna) && (driver5 != pengguna))
-	pengguna = [y,x]
 	driver1 = [rand(1..20),rand(1..20)]
 	driver2 = [rand(1..20),rand(1..20)] 
 	driver3 = [rand(1..20),rand(1..20)] 
@@ -334,13 +334,13 @@ puts "Please write number of your choice and press enter :"
 pilihan = gets.chomp.to_i
 
 if pilihan == 1
-	puts "	Show Map"
+	puts " Show Map"
 	puts ""
-	puts "	Information :"
-	puts "	1 = User"
-	puts "	7 = Driver"
+	puts " Information :"
+	puts " 1 = User"
+	puts " 7 = Driver"
 	puts ""
-	puts "	The Most Up Left Corner is (1,1) and The Most Bottom Right Corner is (20,20)"
+	puts " The Most Up Left Corner is (1,1) and The Most Bottom Right Corner is (20,20)"
 	puts ""
 	print peta1
 	puts ""
@@ -383,14 +383,16 @@ if pilihan == 1
 	print peta20
 	puts ""
 	puts ""
-	puts "Press Any Key To Continue"
+	puts "Press Enter Key To Continue"
 	gets.chomp
+
 elsif pilihan == 2
 	puts "Write the x coordinate of the destination :"
 	x = gets.chomp.to_i
 	puts "Write the y coordinate of the destination :"
 	y = gets.chomp.to_i
 
+	if ((x != pengguna[1]) || (y != pengguna[0]))
 	min=(driver1[0]-pengguna[0]).abs + (driver1[1]-pengguna[1]).abs
 
 	if ((driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs) < min
@@ -432,7 +434,6 @@ elsif pilihan == 2
 
 puts "Route :"
 puts "Start at (#{pengguna[1]},#{pengguna[0]})"
-
 if y != pengguna[0]
 	puts "Go To (#{pengguna[1]},#{y})"
 end
@@ -459,30 +460,49 @@ puts "Confirm Y/N :"
 confirm = gets.chomp.downcase
 
 if confirm == "y"
-	a = "(#{pengguna[1].to_s},#{pengguna[0].to_s}),("
-	b = x.to_s + "," + y.to_s + "),"
-	c = ((pengguna[1] - x).abs + (pengguna[0] - y).abs).to_s + ","
-	d = (((pengguna[1] - x).abs + (pengguna[0] - y).abs)*unit_cost).to_s
-	e = a + b + c + d
-	history = history + [e]
+	a = "(#{pengguna[1].to_s},#{pengguna[0].to_s}),(" + x.to_s + "," + y.to_s + ")," + ((pengguna[1] - x).abs + (pengguna[0] - y).abs).to_s + "," + (((pengguna[1] - x).abs + (pengguna[0] - y).abs)*unit_cost).to_s
+
+case min
+	when (driver1[0]-pengguna[0]).abs + (driver1[1]-pengguna[1]).abs
+		d = ",Mitra1"
+	when (driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs
+		d = ",Mitra2"
+	when (driver3[0]-pengguna[0]).abs + (driver3[1]-pengguna[1]).abs
+		d = ",Mitra3"
+	when (driver4[0]-pengguna[0]).abs + (driver4[1]-pengguna[1]).abs
+		d = ",Mitra4"
+	else
+		d = ",Mitra5"
+	end		
+	t = a + d
+
+	history = history + [t]
 	puts "Trip Completed"
 	runtime = 1
 	puts ""
+	pengguna[0] = y
+	pengguna[1] = x
 else
 	puts ""
 end
 
+else
+	puts "You already there"
+	puts ""
+end
+
+
 elsif pilihan == 3
 	if history != []
-		puts "	View History"
-		puts "	Information : [start_place,destination,distance,cost]"
+		puts " View History"
+		puts " Information : [start_place,destination,distance,cost,driver]"
 		puts ""
 		puts history
+		puts ""
 	end
 elsif pilihan == 4
 	puts "Thanks"
 else
 	puts "error"
 end
-
 end
