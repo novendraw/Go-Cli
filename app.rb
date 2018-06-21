@@ -22,44 +22,62 @@ peta18 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta19 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta20 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
+puts "You Have 3 Choices of Action :"
+puts "1. Show Map"
+puts "2. Order Go-Ride"
+puts "3. Show History"
+puts "Please write number of your choice and press enter :"
 
-print peta1
-puts ""
-print peta2
-puts ""
-print peta3
-puts ""
-print peta4
-puts ""
-print peta5
-puts ""
-print peta6
-puts ""
-print peta7
-puts ""
-print peta8
-puts ""
-print peta9
-puts ""
-print peta10
-puts ""
-print peta11
-puts ""
-print peta12
-puts ""
-print peta13
-puts ""
-print peta14
-puts ""
-print peta15
-puts ""
-print peta16
-puts ""
-print peta17
-puts ""
-print peta18
-puts ""
-print peta19
-puts ""
-print peta20
-puts ""
+pilihan = gets.chomp.to_i
+
+if pilihan == 1
+	puts ""
+	puts "Show Map"
+	puts ""
+	print peta1
+	puts ""
+	print peta2
+	puts ""
+	print peta3
+	puts ""
+	print peta4
+	puts ""
+	print peta5
+	puts ""
+	print peta6
+	puts ""
+	print peta7
+	puts ""
+	print peta8
+	puts ""
+	print peta9
+	puts ""
+	print peta10
+	puts ""
+	print peta11
+	puts ""
+	print peta12
+	puts ""
+	print peta13
+	puts ""
+	print peta14
+	puts ""
+	print peta15
+	puts ""
+	print peta16
+	puts ""
+	print peta17
+	puts ""
+	print peta18
+	puts ""
+	print peta19
+	puts ""
+	print peta20
+	puts ""
+elsif pilihan == 2
+	puts "2"
+elsif pilihan == 3
+	puts "3"
+else
+	puts "error"
+end
