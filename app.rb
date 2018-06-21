@@ -263,6 +263,51 @@ else
 	puts "err"
 end
 
+case pengguna[0]
+when 1
+	peta1[pengguna[1]-1] = 1
+when 2
+	peta2[pengguna[1]-1] = 1
+when 3
+	peta3[pengguna[1]-1] = 1
+when 4
+	peta4[pengguna[1]-1] = 1
+when 5
+	peta5[pengguna[1]-1] = 1
+when 6
+	peta6[pengguna[1]-1] = 1
+when 1
+	peta1[pengguna[1]-1] = 1
+when 8
+	peta8[pengguna[1]-1] = 1
+when 9
+	peta9[pengguna[1]-1] = 1
+when 10
+	peta10[pengguna[1]-1] = 1
+when 11
+	peta11[pengguna[1]-1] = 1
+when 12
+	peta12[pengguna[1]-1] = 1
+when 13
+	peta13[pengguna[1]-1] = 1
+when 14
+	peta14[pengguna[1]-1] = 1
+when 15
+	peta15[pengguna[1]-1] = 1
+when 16
+	peta16[pengguna[1]-1] = 1
+when 11
+	peta11[pengguna[1]-1] = 1
+when 18
+	peta18[pengguna[1]-1] = 1
+when 19
+	peta19[pengguna[1]-1] = 1
+when 20
+	peta20[pengguna[1]-1] = 1
+else
+	puts "err"
+end
+
 puts "You Have 3 Choices of Action :"
 puts "1. Show Map"
 puts "2. Order Go-Ride"
@@ -275,8 +320,8 @@ if pilihan == 1
 	puts "	Show Map"
 	puts ""
 	puts "	Information :"
-	puts "	U = User"
-	puts "	D = Driver"
+	puts "	1 = User"
+	puts "	7 = Driver"
 	puts ""
 	print peta1
 	puts ""
