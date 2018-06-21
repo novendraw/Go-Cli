@@ -38,6 +38,231 @@ until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (
 	pengguna = [rand(1..20),rand(1..20)]
 end
 
+case driver1[0]
+when 1
+	peta1[driver1[1]-1] = 7
+when 2
+	peta2[driver1[1]-1] = 7
+when 3
+	peta3[driver1[1]-1] = 7
+when 4
+	peta4[driver1[1]-1] = 7
+when 5
+	peta5[driver1[1]-1] = 7
+when 6
+	peta6[driver1[1]-1] = 7
+when 7
+	peta7[driver1[1]-1] = 7
+when 8
+	peta8[driver1[1]-1] = 7
+when 9
+	peta9[driver1[1]-1] = 7
+when 10
+	peta10[driver1[1]-1] = 7
+when 11
+	peta11[driver1[1]-1] = 7
+when 12
+	peta12[driver1[1]-1] = 7
+when 13
+	peta13[driver1[1]-1] = 7
+when 14
+	peta14[driver1[1]-1] = 7
+when 15
+	peta15[driver1[1]-1] = 7
+when 16
+	peta16[driver1[1]-1] = 7
+when 17
+	peta17[driver1[1]-1] = 7
+when 18
+	peta18[driver1[1]-1] = 7
+when 19
+	peta19[driver1[1]-1] = 7
+when 20
+	peta20[driver1[1]-1] = 7
+else
+	puts "err"
+end
+
+case driver2[0]
+when 1
+	peta1[driver2[1]-1] = 7
+when 2
+	peta2[driver2[1]-1] = 7
+when 3
+	peta3[driver2[1]-1] = 7
+when 4
+	peta4[driver2[1]-1] = 7
+when 5
+	peta5[driver2[1]-1] = 7
+when 6
+	peta6[driver2[1]-1] = 7
+when 7
+	peta7[driver2[1]-1] = 7
+when 8
+	peta8[driver2[1]-1] = 7
+when 9
+	peta9[driver2[1]-1] = 7
+when 10
+	peta10[driver2[1]-1] = 7
+when 11
+	peta11[driver2[1]-1] = 7
+when 12
+	peta12[driver2[1]-1] = 7
+when 13
+	peta13[driver2[1]-1] = 7
+when 14
+	peta14[driver2[1]-1] = 7
+when 15
+	peta15[driver2[1]-1] = 7
+when 16
+	peta16[driver2[1]-1] = 7
+when 17
+	peta17[driver2[1]-1] = 7
+when 18
+	peta18[driver2[1]-1] = 7
+when 19
+	peta19[driver2[1]-1] = 7
+when 20
+	peta20[driver2[1]-1] = 7
+else
+	puts "err"
+end
+
+case driver3[0]
+when 1
+	peta1[driver3[1]-1] = 7
+when 2
+	peta2[driver3[1]-1] = 7
+when 3
+	peta3[driver3[1]-1] = 7
+when 4
+	peta4[driver3[1]-1] = 7
+when 5
+	peta5[driver3[1]-1] = 7
+when 6
+	peta6[driver3[1]-1] = 7
+when 7
+	peta7[driver3[1]-1] = 7
+when 8
+	peta8[driver3[1]-1] = 7
+when 9
+	peta9[driver3[1]-1] = 7
+when 10
+	peta10[driver3[1]-1] = 7
+when 11
+	peta11[driver3[1]-1] = 7
+when 12
+	peta12[driver3[1]-1] = 7
+when 13
+	peta13[driver3[1]-1] = 7
+when 14
+	peta14[driver3[1]-1] = 7
+when 15
+	peta15[driver3[1]-1] = 7
+when 16
+	peta16[driver3[1]-1] = 7
+when 17
+	peta17[driver3[1]-1] = 7
+when 18
+	peta18[driver3[1]-1] = 7
+when 19
+	peta19[driver3[1]-1] = 7
+when 20
+	peta20[driver3[1]-1] = 7
+else
+	puts "err"
+end
+
+case driver4[0]
+when 1
+	peta1[driver4[1]-1] = 7
+when 2
+	peta2[driver4[1]-1] = 7
+when 3
+	peta3[driver4[1]-1] = 7
+when 4
+	peta4[driver4[1]-1] = 7
+when 5
+	peta5[driver4[1]-1] = 7
+when 6
+	peta6[driver4[1]-1] = 7
+when 7
+	peta7[driver4[1]-1] = 7
+when 8
+	peta8[driver4[1]-1] = 7
+when 9
+	peta9[driver4[1]-1] = 7
+when 10
+	peta10[driver4[1]-1] = 7
+when 11
+	peta11[driver4[1]-1] = 7
+when 12
+	peta12[driver4[1]-1] = 7
+when 13
+	peta13[driver4[1]-1] = 7
+when 14
+	peta14[driver4[1]-1] = 7
+when 15
+	peta15[driver4[1]-1] = 7
+when 16
+	peta16[driver4[1]-1] = 7
+when 17
+	peta17[driver4[1]-1] = 7
+when 18
+	peta18[driver4[1]-1] = 7
+when 19
+	peta19[driver4[1]-1] = 7
+when 20
+	peta20[driver4[1]-1] = 7
+else
+	puts "err"
+end
+
+case driver5[0]
+when 1
+	peta1[driver5[1]-1] = 7
+when 2
+	peta2[driver5[1]-1] = 7
+when 3
+	peta3[driver5[1]-1] = 7
+when 4
+	peta4[driver5[1]-1] = 7
+when 5
+	peta5[driver5[1]-1] = 7
+when 6
+	peta6[driver5[1]-1] = 7
+when 7
+	peta7[driver5[1]-1] = 7
+when 8
+	peta8[driver5[1]-1] = 7
+when 9
+	peta9[driver5[1]-1] = 7
+when 10
+	peta10[driver5[1]-1] = 7
+when 11
+	peta11[driver5[1]-1] = 7
+when 12
+	peta12[driver5[1]-1] = 7
+when 13
+	peta13[driver5[1]-1] = 7
+when 14
+	peta14[driver5[1]-1] = 7
+when 15
+	peta15[driver5[1]-1] = 7
+when 16
+	peta16[driver5[1]-1] = 7
+when 17
+	peta17[driver5[1]-1] = 7
+when 18
+	peta18[driver5[1]-1] = 7
+when 19
+	peta19[driver5[1]-1] = 7
+when 20
+	peta20[driver5[1]-1] = 7
+else
+	puts "err"
+end
+
 puts "You Have 3 Choices of Action :"
 puts "1. Show Map"
 puts "2. Order Go-Ride"
