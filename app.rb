@@ -1,4 +1,3 @@
-puts "Welcome To The Go-cli App"
 unit_cost = 300
 history = Array[]
 driver1 = Array[0,0]
@@ -7,6 +6,11 @@ driver3 = Array[0,0]
 driver4 = Array[0,0]
 driver5 = Array[0,0]
 pengguna = Array[0,0]
+pilihan = 0
+runtime = 0
+
+until pilihan == 4
+puts "Welcome To The Go-cli App"
 
 peta1 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta2 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -29,6 +33,17 @@ peta18 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta19 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta20 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
+if runtime == 1 then
+until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (driver1 != driver4) && (driver2 != driver4) && (driver3 != driver4) && (driver1 != driver5) && (driver2 != driver5) && (driver3 != driver5) && (driver4 != driver5) && (driver1 != pengguna) && (driver2 != pengguna) && (driver3 != pengguna) && (driver4 != pengguna) && (driver5 != pengguna))
+	pengguna = [y,x]
+	driver1 = [rand(1..20),rand(1..20)]
+	driver2 = [rand(1..20),rand(1..20)] 
+	driver3 = [rand(1..20),rand(1..20)] 
+	driver4 = [rand(1..20),rand(1..20)]
+	driver5 = [rand(1..20),rand(1..20)] 
+end
+
+else
 until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (driver1 != driver4) && (driver2 != driver4) && (driver3 != driver4) && (driver1 != driver5) && (driver2 != driver5) && (driver3 != driver5) && (driver4 != driver5) && (driver1 != pengguna) && (driver2 != pengguna) && (driver3 != pengguna) && (driver4 != pengguna) && (driver5 != pengguna))
 	driver1 = [rand(1..20),rand(1..20)]
 	driver2 = [rand(1..20),rand(1..20)] 
@@ -36,6 +51,7 @@ until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (
 	driver4 = [rand(1..20),rand(1..20)]
 	driver5 = [rand(1..20),rand(1..20)] 
 	pengguna = [rand(1..20),rand(1..20)]
+end
 end
 
 case driver1[0]
@@ -296,7 +312,7 @@ when 15
 	peta15[pengguna[1]-1] = 1
 when 16
 	peta16[pengguna[1]-1] = 1
-when 11
+when 17
 	peta11[pengguna[1]-1] = 1
 when 18
 	peta18[pengguna[1]-1] = 1
@@ -312,6 +328,7 @@ puts "You Have 3 Choices of Action :"
 puts "1. Show Map"
 puts "2. Order Go-Ride"
 puts "3. Show History"
+puts "4. Exit"
 puts "Please write number of your choice and press enter :"
 
 pilihan = gets.chomp.to_i
@@ -322,6 +339,8 @@ if pilihan == 1
 	puts "	Information :"
 	puts "	1 = User"
 	puts "	7 = Driver"
+	puts ""
+	puts "	The Most Up Left Corner is (1,1) and The Most Bottom Right Corner is (20,20)"
 	puts ""
 	print peta1
 	puts ""
@@ -363,16 +382,107 @@ if pilihan == 1
 	puts ""
 	print peta20
 	puts ""
+	puts ""
+	puts "Press Any Key To Continue"
+	gets.chomp
 elsif pilihan == 2
-	puts "2"
-elsif pilihan == 3
-	if history == []
+	puts "Write the x coordinate of the destination :"
+	x = gets.chomp.to_i
+	puts "Write the y coordinate of the destination :"
+	y = gets.chomp.to_i
+
+	min=(driver1[0]-pengguna[0]).abs + (driver1[1]-pengguna[1]).abs
+
+	if ((driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs) < min
+		min = (driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs
 	else
+		min = min
+	end
+
+	if ((driver3[0]-pengguna[0]).abs + (driver3[1]-pengguna[1]).abs) < min
+		min = (driver3[0]-pengguna[0]).abs + (driver3[1]-pengguna[1]).abs
+	else
+		min = min
+	end
+
+	if ((driver4[0]-pengguna[0]).abs + (driver4[1]-pengguna[1]).abs) < min
+		min = (driver4[0]-pengguna[0]).abs + (driver4[1]-pengguna[1]).abs
+	else
+		min = min
+	end
+
+	if ((driver5[0]-pengguna[0]).abs + (driver5[1]-pengguna[1]).abs) < min
+		min = (driver5[0]-pengguna[0]).abs + (driver5[1]-pengguna[1]).abs
+	else
+		min = min
+	end
+
+	case min
+	when (driver1[0]-pengguna[0]).abs + (driver1[1]-pengguna[1]).abs
+		puts "Driver : Mitra1"
+	when (driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs
+		puts "Driver : Mitra2"
+	when (driver3[0]-pengguna[0]).abs + (driver3[1]-pengguna[1]).abs
+		puts "Driver : Mitra3"
+	when (driver4[0]-pengguna[0]).abs + (driver4[1]-pengguna[1]).abs
+		puts "Driver : Mitra4"
+	else
+		puts "Driver : Mitra5"
+	end		
+
+puts "Route :"
+puts "Start at (#{pengguna[1]},#{pengguna[0]})"
+
+if y != pengguna[0]
+	puts "Go To (#{pengguna[1]},#{y})"
+end
+
+if pengguna[0] < y && pengguna[1] < x
+	puts "Turn Left"
+elsif pengguna[0] < y && pengguna[1] > x
+	puts "Turn Right"
+elsif pengguna[0] > y && pengguna[1] > x
+	puts "Turn Left"
+elsif pengguna[0] > y && pengguna[1] < x
+	puts "Turn Right"
+end
+
+if x != pengguna[1]
+	puts "Go To (#{x},#{y})"
+end
+
+puts "Finish At (#{x},#{y})"
+
+puts "Estimated Cost : " + (((pengguna[1] - x).abs + (pengguna[0] - y).abs)*unit_cost).to_s
+
+puts "Confirm Y/N :"
+confirm = gets.chomp.downcase
+
+if confirm == "y"
+	a = "(#{pengguna[1].to_s},#{pengguna[0].to_s}),("
+	b = x.to_s + "," + y.to_s + "),"
+	c = ((pengguna[1] - x).abs + (pengguna[0] - y).abs).to_s + ","
+	d = (((pengguna[1] - x).abs + (pengguna[0] - y).abs)*unit_cost).to_s
+	e = a + b + c + d
+	history = history + [e]
+	puts "Trip Completed"
+	runtime = 1
+	puts ""
+else
+	puts ""
+end
+
+elsif pilihan == 3
+	if history != []
 		puts "	View History"
 		puts "	Information : [start_place,destination,distance,cost]"
 		puts ""
 		puts history
 	end
+elsif pilihan == 4
+	puts "Thanks"
 else
 	puts "error"
+end
+
 end
