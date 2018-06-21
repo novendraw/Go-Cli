@@ -392,7 +392,7 @@ elsif pilihan == 2
 	puts "Write the y coordinate of the destination :"
 	y = gets.chomp.to_i
 
-	if ((x != pengguna[1]) || (y != pengguna[0]))
+	if ((x != pengguna[1]) || (y != pengguna[0])) && ((y<=20 && y>0) && (x<=20 && x>0))
 	min=(driver1[0]-pengguna[0]).abs + (driver1[1]-pengguna[1]).abs
 
 	if ((driver2[0]-pengguna[0]).abs + (driver2[1]-pengguna[1]).abs) < min
@@ -474,6 +474,7 @@ case min
 	else
 		d = ",Mitra5"
 	end		
+
 	t = a + d
 
 	history = history + [t]
@@ -486,11 +487,12 @@ else
 	puts ""
 end
 
-else
+elsif ((x == pengguna[1]) && (y == pengguna[0]))
 	puts "You already there"
 	puts ""
+else
+	puts ""
 end
-
 
 elsif pilihan == 3
 	if history != []
@@ -500,9 +502,11 @@ elsif pilihan == 3
 		puts history
 		puts ""
 	end
+
 elsif pilihan == 4
 	puts "Thanks"
 else
 	puts "error"
 end
+
 end
