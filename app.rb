@@ -1,6 +1,12 @@
 puts "Welcome To The Go-cli App"
 unit_cost = 300
 history = Array[]
+driver1 = Array[0,0]
+driver2 = Array[0,0]
+driver3 = Array[0,0]
+driver4 = Array[0,0]
+driver5 = Array[0,0]
+pengguna = Array[0,0]
 
 peta1 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta2 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -23,9 +29,14 @@ peta18 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta19 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 peta20 	= Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-
-
-
+until ((driver1 != driver2) && (driver1 != driver3) && (driver2 != driver3) && (driver1 != driver4) && (driver2 != driver4) && (driver3 != driver4) && (driver1 != driver5) && (driver2 != driver5) && (driver3 != driver5) && (driver4 != driver5) && (driver1 != pengguna) && (driver2 != pengguna) && (driver3 != pengguna) && (driver4 != pengguna) && (driver5 != pengguna))
+	driver1 = [rand(1..20),rand(1..20)]
+	driver2 = [rand(1..20),rand(1..20)] 
+	driver3 = [rand(1..20),rand(1..20)] 
+	driver4 = [rand(1..20),rand(1..20)]
+	driver5 = [rand(1..20),rand(1..20)] 
+	pengguna = [rand(1..20),rand(1..20)]
+end
 
 puts "You Have 3 Choices of Action :"
 puts "1. Show Map"
@@ -85,7 +96,7 @@ if pilihan == 1
 elsif pilihan == 2
 	puts "2"
 elsif pilihan == 3
-	if history = []
+	if history == []
 	else
 		puts "	View History"
 		puts "	Information : [start_place,destination,distance,cost]"
